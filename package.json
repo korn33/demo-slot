@@ -1,0 +1,29 @@
+{
+  "name": "demo-slot",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/korn33/demo-slot#readme",
+  "bugs": {
+    "url": "https://github.com/korn33/demo-slot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/korn33/demo-slot.git"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "serve": "webpack serve --mode development"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "html-webpack-plugin": "^5.6.8",
+    "ts-loader": "^9.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~6.0.3",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3",
+    "webpack-dev-server": "^6.0.0"
+  }
+}
