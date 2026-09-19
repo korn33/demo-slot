@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration = {
     mode: 'production',
+    devtool: 'source-map',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
         path: path.resolve(__dirname, 'dist'),
