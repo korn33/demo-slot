@@ -1,5 +1,7 @@
+import * as os from "os";
 import * as path from "path";
 import * as webpack from 'webpack';
+import 'webpack-dev-server';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const config: webpack.Configuration = {
@@ -18,6 +20,16 @@ const config: webpack.Configuration = {
         },
         template: path.resolve(__dirname, 'public', 'index.html')
     })],
+    devServer: {
+        onListening(devServer) {
+            const port = (devServer.server?.address() as { port: number }).port;
+            const urls = Object.values(os.networkInterfaces())
+                .flat()
+                .filter((i) => i?.family === 'IPv4' && i.address.startsWith('192.168.'))
+                .map((i) => `http://${i!.address}:${port}/`);
+            console.log('Открыть с телефона:', urls.join('  '));
+        },
+    },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
