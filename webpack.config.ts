@@ -4,9 +4,9 @@ import * as webpack from 'webpack';
 import 'webpack-dev-server';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-const config: webpack.Configuration = {
+const config = (_env: unknown, argv: webpack.Configuration): webpack.Configuration => ({
     mode: 'production',
-    devtool: 'source-map',
+    devtool: argv.mode === 'production' ? false : 'source-map',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -46,6 +46,6 @@ const config: webpack.Configuration = {
             }
         ]
     },
-};
+});
 
 export default config;
