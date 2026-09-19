@@ -15,12 +15,14 @@
   "scripts": {
     "atlas": "ts-node scripts/build-atlas.ts",
     "build": "webpack --mode production",
+    "deploy": "node deploy.mjs",
     "serve": "webpack serve --mode development --host 0.0.0.0",
     "serve:open": "webpack serve --mode development --open"
   },
   "devDependencies": {
     "@types/node": "^26.6.2",
     "free-tex-packer-core": "^0.3.9",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.8",
     "ts-loader": "^9.6.2",
     "ts-node": "^10.9.2",
